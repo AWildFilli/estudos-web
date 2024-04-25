@@ -1,0 +1,51 @@
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 1px;
+}
+
+body{
+    background-image: url(/background.jpg);
+    background-repeat: repeat;
+}
+
+h1 {
+    color: blue;
+}
+
+input[type=text], [type=email]{
+    width: 75%;
+}
+
+sup {
+    color: rebeccapurple;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.div__formulario {
+    border: 2px solid black;
+    width: 50%;
+    min-width: 300px;
+}
+
+.espacamento {
+    min-width: 10px;
+    min-height: 10px;
+}
+
+.div__info {
+    background-color: aliceblue;
+    border: 3px solid lightblue;
+    align-self: center;
+    text-align: center;
+    padding: 15px 0px;
+    min-width: 340px;
+}
