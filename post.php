@@ -1,5 +1,7 @@
 <?php
-$Cursos = ["Nenhum", "Robótica", "Futebol", "Artes"];
+    session_start();
+    $cursos = ["Nenhum", "Robótica", "Futebol", "Artes"];
+    $_SESSION["curPreferido"] = $cursos;
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +20,14 @@ $Cursos = ["Nenhum", "Robótica", "Futebol", "Artes"];
 
     <div class="container">
         <div class="div__formulario">
-            <form method="post">
+            <form action="/resultadoPost.php" method="post">
                 <h3>Informações do aluno</h3>
                 <small style="color:red">(Campos marcados com * são obrigatórios)</small><br><br>
                 <label for="alunoNome">*Nome do aluno:</label><br>
-                    <input type="text" id="alunoNome" placeholder="José da Silva" required="true"><br>
+                    <input type="text" id="alunoNome" name="alunoNome" placeholder="José da Silva" required="true"><br>
 
                 <label for="alunoRA">*RA do aluno:</label><br>
-                    <input type="number" id="alunoRA" pattern="[0-9]{3}" required="true"/><br>
+                    <input type="number" id="alunoRA" name="alunoRA" required="true"/><br>
                 <br>
                 <label>*Matriculado no período:</label><br>
                     <input type="radio" id="per1" name="periodo" value="Matutino" required="true">
@@ -39,19 +41,16 @@ $Cursos = ["Nenhum", "Robótica", "Futebol", "Artes"];
                 <br>
                 <label>Interesse em:</label><br>
                     <label for="selInteresse"></label>
-                    <input type="checkbox" id="interesse1" name="interesse1" value="Bike">
-                    <label for="vehicle1">Robótica</label>
-                    <input type="checkbox" id="interesse2" name="interesse2" value="Car">
-                    <label for="vehicle2">Futebol</label>
-                    <input type="checkbox" id="interesse3" name="interesse3" value="Boat">
-                    <label for="vehicle3">Artes</label>
+                    <input type="checkbox" id="interesse1" name="interesse[]" value="Robótica"> Robótica
+                    <input type="checkbox" id="interesse2" name="interesse[]" value="Futebol"> Futebol
+                    <input type="checkbox" id="interesse3" name="interesse[]" value="Artes"> Artes
                 <br><br>
                 <label for="selCurso">Curso preferido:</label>
-                    <select id="selCurso">
+                    <select id="selCurso" name="selCurso">
                         <?php
-                            for ($i=0; $i < count($Cursos); $i++) {
+                            for ($i=0; $i < count($cursos); $i++) {
                             ?> 
-                            <option value="<?= $i;?>"><?= $Cursos[$i];?></option>
+                            <option value="<?= $i;?>"><?= $cursos[$i];?></option>
                         <?php
                         }
                         ?>

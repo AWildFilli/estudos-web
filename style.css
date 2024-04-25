@@ -3,11 +3,6 @@
     margin: 1px;
 }
 
-body{
-    background-image: url(/background.jpg);
-    background-repeat: repeat;
-}
-
 h1 {
     color: blue;
 }
@@ -18,7 +13,10 @@ input[type=text], [type=email]{
 
 sup {
     color: rebeccapurple;
-    
+}
+
+ul {
+    text-align: start;
 }
 
 .container {
@@ -36,6 +34,12 @@ sup {
     min-width: 300px;
 }
 
+.div__resumo{
+    border: 2px solid black;
+    width: 50%;
+    float: left;
+}
+
 .espacamento {
     min-width: 10px;
     min-height: 10px;
@@ -48,4 +52,13 @@ sup {
     text-align: center;
     padding: 15px 0px;
     min-width: 340px;
+}
+
+.div__orientacao{
+    background-color: aliceblue;
+    border: 3px solid lightblue;
+    align-self: center;
+    text-align: center;
+    padding: 15px 5px;
+    min-width: 281;
 }
